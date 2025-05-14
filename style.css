@@ -1,270 +1,55 @@
-/* Base Reset and Global Styles */
-* {
-  box-sizing: border-box;
-  margin: 0;
-  padding: 0;
-}
+/* Global Reset and Base Styles */
 
-body, html {
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  min-height: 100vh;
-  color: #fff;
-  background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-}
+{ margin: 0; padding: 0; box-sizing: border-box; }
 
-/* Header */
-header {
-  background: linear-gradient(to right, #1e3c72, #2a5298);
-  padding: 1rem 2rem;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.4);
-}
 
-header h1 {
-  font-size: 1.75rem;
-  color: #fff;
-}
+body, html { font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(to bottom right, #002f4b, #006699); color: #fff; min-height: 100vh; }
 
-/* Navbar */
-nav {
-  display: flex;
-  gap: 1.5rem;
-}
+/* Reusable Container Box */ .card { background: linear-gradient(to bottom right, #003d66, #005b96); border-radius: 20px; padding: 2rem; box-shadow: 0 10px 30px rgba(0,0,0,0.3); margin: 1rem auto; width: 90%; max-width: 450px; }
 
-nav a {
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-  transition: all 0.3s ease;
-}
+/* Header & Navigation */ header { background: transparent; display: flex; justify-content: space-between; align-items: center; padding: 1rem 2rem; font-size: 1.2rem; }
 
-nav a:hover {
-  text-decoration: underline;
-}
+header .logo { font-weight: bold; font-size: 1.5rem; }
 
-/* Sidebar (if used) */
-.sidebar {
-  width: 220px;
-  background: linear-gradient(to bottom, #2a5298, #1e3c72);
-  padding: 2rem 1rem;
-  min-height: 100vh;
-  position: fixed;
-  top: 0;
-  left: 0;
-}
+nav a { color: #fff; text-decoration: none; margin-left: 1.5rem; font-weight: 500; }
 
-.sidebar a {
-  display: block;
-  margin: 1rem 0;
-  color: #fff;
-  text-decoration: none;
-  font-weight: bold;
-}
+nav a:hover { text-decoration: underline; }
 
-.sidebar a:hover {
-  text-decoration: underline;
-}
+/* Welcome Section */ .welcome { text-align: center; padding: 4rem 2rem; }
 
-/* Dashboard Layout */
-.main-content {
-  margin-left: 240px;
-  padding: 2rem;
-}
+.welcome h1 { font-size: 2.5rem; margin-bottom: 1rem; }
 
-/* Login Page */
-.login-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-}
+.welcome button { background: linear-gradient(to right, #1e90ff, #007bff); border: none; padding: 0.75rem 2rem; border-radius: 12px; color: #fff; font-size: 1rem; cursor: pointer; box-shadow: 0 5px 15px rgba(0,0,0,0.2); }
 
-.login-box {
-  background: rgba(255,255,255,0.05);
-  backdrop-filter: blur(12px);
-  border-radius: 20px;
-  padding: 2rem;
-  max-width: 400px;
-  width: 100%;
-  box-shadow: 0 8px 20px rgba(0,0,0,0.5);
-}
+/* Login Box */ .login-box { text-align: center; }
 
-.login-box h2 {
-  margin-bottom: 1.5rem;
-  text-align: center;
-}
+.login-box input[type="text"], .login-box input[type="password"] { width: 100%; padding: 0.75rem; margin: 0.5rem 0; border-radius: 10px; border: none; background: #fff; color: #000; font-size: 1rem; }
 
-.login-box input[type="text"],
-.login-box input[type="password"] {
-  width: 100%;
-  padding: 0.75rem;
-  border: none;
-  border-radius: 10px;
-  margin-bottom: 1rem;
-  font-size: 1rem;
-}
+.login-box button { width: 100%; background: linear-gradient(to right, #1e90ff, #007bff); border: none; padding: 0.75rem; border-radius: 12px; color: #fff; font-weight: bold; cursor: pointer; font-size: 1rem; }
 
-.login-box button {
-  width: 100%;
-  padding: 0.75rem;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  font-weight: bold;
-  cursor: pointer;
-  color: #fff;
-  transition: background 0.3s ease;
-}
+/* Dashboard */ .dashboard-container { display: flex; }
 
-.login-box button:hover {
-  background: linear-gradient(to right, #0072ff, #00c6ff);
-}
+.sidebar { background: #003f63; padding: 2rem 1rem; width: 220px; min-height: 100vh; border-radius: 0 20px 20px 0; }
 
-/* Welcome Page */
-.welcome-container {
-  text-align: center;
-  padding: 6rem 2rem;
-}
+.sidebar a { display: block; color: #fff; padding: 0.75rem; margin-bottom: 1rem; text-decoration: none; border-radius: 10px; }
 
-.welcome-container h1 {
-  font-size: 3rem;
-  margin-bottom: 1rem;
-}
+.sidebar a:hover { background: rgba(255,255,255,0.1); }
 
-.welcome-container p {
-  font-size: 1.2rem;
-  max-width: 600px;
-  margin: auto;
-  line-height: 1.6;
-}
+.dashboard-content { flex-grow: 1; padding: 2rem; }
 
-/* Dashboard Panel */
-.dashboard {
-  text-align: center;
-}
+.dashboard-card { background: #f8f9fa; color: #000; border-radius: 15px; padding: 1.5rem; margin-bottom: 1rem; box-shadow: 0 4px 10px rgba(0,0,0,0.15); }
 
-.dashboard h2 {
-  font-size: 2.5rem;
-  margin-bottom: 2rem;
-}
+.dashboard-card h3 { margin-bottom: 0.5rem; }
 
-.dashboard .button-group {
-  display: flex;
-  justify-content: center;
-  flex-wrap: wrap;
-  gap: 1rem;
-}
+.dashboard-card button { background: transparent; border: none; color: #007bff; margin-left: 1rem; cursor: pointer; }
 
-.dashboard button {
-  padding: 0.75rem 2rem;
-  background: #3498db;
-  color: #fff;
-  border: none;
-  border-radius: 10px;
-  font-size: 1rem;
-  cursor: pointer;
-  transition: background 0.3s;
-}
+/* Create Post */ .create-post input[type="text"], .create-post textarea { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border-radius: 10px; border: none; font-size: 1rem; color: #000; background-color: #fff; }
 
-.dashboard button:hover {
-  background: #2980b9;
-}
+.create-post textarea { min-height: 150px; }
 
-/* Create Post Page */
-.create-post-container {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
+.create-post button { background: linear-gradient(to right, #1e90ff, #007bff); border: none; padding: 0.75rem 2rem; border-radius: 12px; color: #fff; font-weight: bold; font-size: 1rem; cursor: pointer; }
 
-.create-post-container h2 {
-  text-align: center;
-  margin-bottom: 1.5rem;
-}
+/* Footer */ footer { background: #002f4b; color: #fff; text-align: center; padding: 1rem; position: fixed; bottom: 0; width: 100%; font-size: 0.9rem; }
 
-.create-post-container input[type="text"],
-.create-post-container textarea {
-  width: 100%;
-  padding: 0.75rem;
-  margin-bottom: 1rem;
-  border: none;
-  border-radius: 8px;
-  font-size: 1rem;
-}
+/* Responsive */ @media (max-width: 768px) { .dashboard-container { flex-direction: column; } .sidebar { width: 100%; border-radius: 0; text-align: center; } .dashboard-content { padding: 1rem; } }
 
-.create-post-container button {
-  display: block;
-  margin: 0 auto;
-  padding: 0.75rem 2rem;
-  background: linear-gradient(to right, #00c6ff, #0072ff);
-  border: none;
-  color: white;
-  font-size: 1rem;
-  font-weight: bold;
-  border-radius: 10px;
-  cursor: pointer;
-}
-
-/* View Post Page */
-.view-post {
-  max-width: 800px;
-  margin: 3rem auto;
-  padding: 2rem;
-  background: rgba(255,255,255,0.05);
-  border-radius: 16px;
-  box-shadow: 0 4px 12px rgba(0,0,0,0.5);
-}
-
-.view-post h2 {
-  text-align: center;
-  font-size: 2rem;
-  margin-bottom: 1rem;
-}
-
-#post-title {
-  font-size: 1.5rem;
-  font-weight: bold;
-  margin-bottom: 1rem;
-}
-
-#post-content {
-  font-size: 1.1rem;
-  line-height: 1.6;
-}
-
-/* Footer */
-footer {
-  background: linear-gradient(to right, #1e3c72, #2a5298);
-  padding: 1rem;
-  text-align: center;
-  position: fixed;
-  bottom: 0;
-  width: 100%;
-  color: #fff;
-}
-
-/* Responsive */
-@media (max-width: 768px) {
-  .main-content {
-    margin-left: 0;
-    padding: 1rem;
-  }
-
-  .sidebar {
-    display: none;
-  }
-
-  .welcome-container h1 {
-    font-size: 2rem;
-  }
-
-  .dashboard h2 {
-    font-size: 2rem;
-  }
-  }
