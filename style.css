@@ -1,56 +1,54 @@
-/* Global Styles */ body, html { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; background: linear-gradient(135deg, #004e92, #000428); color: white; height: 100%; overflow-x: hidden; }
+/* Global styles */ body, html { margin: 0; padding: 0; font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif; color: #fff; background: linear-gradient(135deg, #0f2027, #203a43, #2c5364); min-height: 100vh; }
 
-a { color: inherit; text-decoration: none; }
+/* Header and Navbar */ header, nav { background: linear-gradient(to right, #1e3c72, #2a5298); padding: 1rem 2rem; display: flex; justify-content: space-between; align-items: center; box-shadow: 0 2px 8px rgba(0,0,0,0.3); }
 
-/* Welcome Page */ .welcome-container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; text-align: center; background: linear-gradient(135deg, #004e92, #000428); }
+nav a { color: #fff; text-decoration: none; margin: 0 1rem; font-weight: bold; }
+
+nav a:hover { text-decoration: underline; }
+
+/* Welcome Page */ .welcome-container { display: flex; flex-direction: column; justify-content: center; align-items: center; text-align: center; padding: 5rem 2rem; }
 
 .welcome-container h1 { font-size: 3rem; margin-bottom: 1rem; }
 
-.welcome-container p { font-size: 1.2rem; margin-bottom: 2rem; }
+.welcome-container p { font-size: 1.25rem; max-width: 600px; line-height: 1.6; }
 
-.welcome-container .btn { background: white; color: #004e92; padding: 0.75rem 1.5rem; border: none; border-radius: 30px; font-weight: bold; cursor: pointer; transition: 0.3s ease; }
+/* Login Page */ .login-container { display: flex; justify-content: center; align-items: center; height: 100vh; }
 
-.welcome-container .btn:hover { background: #004e92; color: white; }
+.login-box { background: rgba(255, 255, 255, 0.05); backdrop-filter: blur(10px); border-radius: 16px; padding: 2rem; width: 100%; max-width: 400px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); }
 
-/* Login Page */ .login-container { display: flex; flex-direction: column; align-items: center; justify-content: center; height: 100vh; background: linear-gradient(135deg, #004e92, #000428); color: white; }
+.login-box h2 { text-align: center; margin-bottom: 1.5rem; }
 
-.login-container h2 { font-size: 2.5rem; margin-bottom: 1rem; }
+.login-box input[type="text"], .login-box input[type="password"] { width: 100%; padding: 0.75rem; margin-bottom: 1rem; border: none; border-radius: 8px; font-size: 1rem; }
 
-.login-form { display: flex; flex-direction: column; gap: 1rem; width: 300px; }
+.login-box button { width: 100%; padding: 0.75rem; background: linear-gradient(to right, #00c6ff, #0072ff); border: none; border-radius: 8px; font-size: 1rem; font-weight: bold; cursor: pointer; color: #fff; transition: background 0.3s ease; }
 
-.login-form input { padding: 0.75rem; border: none; border-radius: 10px; outline: none; }
+.login-box button:hover { background: linear-gradient(to right, #0072ff, #00c6ff); }
 
-.login-form button { padding: 0.75rem; background-color: white; color: #004e92; border: none; border-radius: 30px; font-weight: bold; cursor: pointer; transition: 0.3s ease; }
+/* Dashboard */ .dashboard { padding: 2rem; text-align: center; }
 
-.login-form button:hover { background-color: #004e92; color: white; }
+.dashboard h2 { font-size: 2.5rem; margin-bottom: 2rem; }
 
-/* Dashboard */ .dashboard { padding: 2rem; min-height: 100vh; background: linear-gradient(135deg, #004e92, #000428); }
+.dashboard button { padding: 0.75rem 2rem; background: #3498db; color: #fff; border: none; border-radius: 10px; font-size: 1rem; cursor: pointer; transition: background 0.3s; margin: 0.5rem; }
 
-.dashboard h1 { font-size: 2rem; margin-bottom: 2rem; }
+.dashboard button:hover { background: #2980b9; }
 
-.dashboard-nav { display: flex; justify-content: space-between; margin-bottom: 2rem; }
+/* Create Post */ .create-post-container { padding: 2rem; max-width: 800px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); }
 
-.dashboard-nav a { background: white; color: #004e92; padding: 0.5rem 1rem; border-radius: 20px; margin-right: 1rem; font-weight: bold; }
+.create-post-container h2 { text-align: center; margin-bottom: 1.5rem; }
 
-.dashboard-nav a:hover { background: #004e92; color: white; }
+.create-post-container input[type="text"] { width: 100%; padding: 0.75rem; border: none; border-radius: 8px; margin-bottom: 1rem; font-size: 1rem; }
 
-/* Create Post Page */ .create-post { padding: 2rem; background: linear-gradient(135deg, #004e92, #000428); min-height: 100vh; color: white; }
+.create-post-container button { padding: 0.75rem 2rem; background: linear-gradient(to right, #00c6ff, #0072ff); color: #fff; border: none; border-radius: 8px; font-size: 1rem; cursor: pointer; }
 
-.create-post h2 { font-size: 2rem; margin-bottom: 1rem; }
+/* View Post */ .view-post { padding: 2rem; max-width: 800px; margin: 0 auto; background: rgba(255, 255, 255, 0.05); border-radius: 16px; box-shadow: 0 4px 12px rgba(0, 0, 0, 0.5); }
 
-.create-post-form { display: flex; flex-direction: column; gap: 1rem; }
+.view-post h2 { font-size: 2rem; margin-bottom: 1rem; text-align: center; }
 
-.create-post-form input, .create-post-form textarea { padding: 0.75rem; border: none; border-radius: 10px; outline: none; width: 100%; font-size: 1rem; }
+.view-post #post-title { font-size: 1.75rem; font-weight: bold; margin-bottom: 1rem; }
 
-.create-post-form button { padding: 0.75rem; background-color: white; color: #004e92; border: none; border-radius: 30px; font-weight: bold; cursor: pointer; transition: 0.3s ease; }
+.view-post #post-content { font-size: 1.125rem; line-height: 1.6; white-space: pre-wrap; }
 
-.create-post-form button:hover { background-color: #004e92; color: white; }
+/* Footer */ footer { background: linear-gradient(to right, #1e3c72, #2a5298); padding: 1rem; text-align: center; font-size: 0.9rem; color: #fff; position: fixed; bottom: 0; width: 100%; }
 
-/* Footer */ footer { padding: 1rem; text-align: center; background: #000428; color: white; position: relative; bottom: 0; width: 100%; }
-
-/* Responsive */ @media screen and (max-width: 768px) { .login-form, .create-post-form { width: 90%; }
-
-.dashboard-nav { flex-direction: column; }
-
-.dashboard-nav a { margin-bottom: 1rem; } }
+/* Responsive */ @media (max-width: 768px) { .welcome-container h1 { font-size: 2.25rem; } .dashboard h2 { font-size: 2rem; } .view-post h2, .create-post-container h2 { font-size: 1.5rem; } }
 
