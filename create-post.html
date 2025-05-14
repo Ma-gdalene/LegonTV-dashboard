@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Create Post - LegonTV Dashboard</title>
+  <link rel="stylesheet" href="style.css" />
+  <!-- CKEditor with full toolbar via CDN -->
+  <script src="https://cdn.jsdelivr.net/npm/@ckeditor/ckeditor5-build-classic@36.0.1/build/ckeditor.js"></script>
+  <style>
+    .ck-editor__editable_inline {
+      background: white;
+      min-height: 300px;
+      padding: 1rem;
+      border-radius: 6px;
+    }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="logo">
+      <h1>LegonTV Dashboard</h1>
+    </div>
+    <nav>
+      <ul>
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="create-post.html">Create Post</a></li>
+        <li><a href="view-post.html">View Post</a></li>
+        <li><a href="#" id="logout-btn">Logout</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <div class="create-post-container">
+    <h2>Create New Post</h2>
+    <form id="create-post-form">
+      <label for="post-title-input">Title:</label>
+      <input type="text" id="post-title-input" required />
+
+      <label for="post-content-input">Content:</label>
+      <textarea id="post-content-input" required></textarea>
+
+      <button type="submit">Publish Post</button>
+    </form>
+  </div>
+
+  <footer>
+    <p>© 2025 LegonTV. All rights reserved.</p>
+  </footer>
+
+  <script src="script.js"></script>
+  <script>
+    let editorInstance;
+
+    ClassicEditor
+      .create(document.querySelector('#post-content-input'), {
+        toolbar: [
+          'heading', '|',
+          'bold', 'italic', 'underline', 'strikethrough', '|',
+          'fontSize', 'fontFamily', 'fontColor', 'fontBackgroundColor', '|',
+          'alignment', '|',
+          'link', 'insertImage', 'blockQuote', 'mediaEmbed', '|',
+          'undo', 'redo'
+        ]
+      })
+      .then(editor => {
+        editorInstance = editor;
+      })
+      .catch(error => {
+        console.error(error);
+      });
+
+    document.getElementById('create-post-form').addEventListener('submit', function(event) {
+      event.preventDefault();
+      const title = document.getElementById('post-title-input').value;
+      const content = editorInstance.getData();
+
+      if (!title || !content) {
+        alert('Please enter both title and content');
+        return;
+      }
+
+      const post = { title, content };
+      localStorage.setItem('post', JSON.stringify(post));
+      window.location.href = 'view-post.html';
+    });
+  </script>
+</body>
+</html>
