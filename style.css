@@ -1,0 +1,204 @@
+/* General Reset */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Segoe UI', sans-serif;
+}
+
+body {
+  min-height: 100vh;
+  background: linear-gradient(to bottom right, #003366, #336699);
+  color: #fff;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: 2rem;
+}
+
+/* Login Page */
+.login-container {
+  background: rgba(255, 255, 255, 0.1);
+  padding: 2rem 3rem;
+  border-radius: 16px;
+  box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+  backdrop-filter: blur(8px);
+  width: 100%;
+  max-width: 400px;
+  text-align: center;
+}
+
+.login-container h2 {
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+.login-container input,
+.login-container button {
+  width: 100%;
+  margin: 0.5rem 0;
+  padding: 0.75rem;
+  border-radius: 8px;
+  border: none;
+  font-size: 1rem;
+}
+
+.login-container input {
+  background: #fff;
+  color: #000;
+}
+
+.login-container button {
+  background: #0055aa;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.login-container button:hover {
+  background: #003366;
+}
+
+#error-message {
+  color: red;
+  margin-top: 10px;
+  display: none;
+}
+
+/* Dashboard Page */
+.dashboard {
+  max-width: 900px;
+  width: 100%;
+  background: rgba(255, 255, 255, 0.15);
+  border-radius: 16px;
+  padding: 2rem;
+  backdrop-filter: blur(10px);
+}
+
+.dashboard h1 {
+  margin-bottom: 1.5rem;
+  color: #fff;
+}
+
+.dashboard nav {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 2rem;
+}
+
+.dashboard nav a,
+#logout-btn {
+  background: #fff;
+  color: #003366;
+  padding: 0.5rem 1rem;
+  border-radius: 8px;
+  text-decoration: none;
+  font-weight: bold;
+  transition: background 0.3s ease;
+}
+
+.dashboard nav a:hover,
+#logout-btn:hover {
+  background: #cce0ff;
+}
+
+/* Create Post */
+form#create-post-form {
+  background: #fff;
+  color: #000;
+  padding: 2rem;
+  border-radius: 12px;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.2);
+}
+
+form#create-post-form input[type="text"] {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  font-size: 1rem;
+  border-radius: 6px;
+  border: 1px solid #ccc;
+}
+
+form#create-post-form button {
+  background: #003366;
+  color: #fff;
+  padding: 0.75rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+form#create-post-form button:hover {
+  background: #0055aa;
+}
+
+/* CKEditor Overrides */
+.cke_contents {
+  background: #fff !important;
+  color: #000;
+  border-radius: 6px;
+}
+
+/* View Post */
+#view-post {
+  background: rgba(255, 255, 255, 0.15);
+  padding: 2rem;
+  border-radius: 12px;
+  max-width: 900px;
+  width: 100%;
+  margin: 2rem auto;
+  backdrop-filter: blur(10px);
+  color: #fff;
+}
+
+#view-post h2 {
+  font-size: 2rem;
+  margin-bottom: 1rem;
+  color: #fff;
+}
+
+#view-post #post-content {
+  background: #fff;
+  color: #000;
+  padding: 1rem;
+  border-radius: 8px;
+  margin-bottom: 1.5rem;
+}
+
+#view-post button {
+  margin-right: 10px;
+  background: #ff4444;
+  color: #fff;
+  border: none;
+  padding: 0.5rem 1rem;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#view-post button#edit-btn {
+  background: #0055aa;
+}
+
+#view-post button:hover {
+  opacity: 0.85;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .dashboard,
+  form#create-post-form,
+  #view-post,
+  .login-container {
+    padding: 1rem;
+  }
+
+  form#create-post-form {
+    margin: 1rem auto;
+  }
+}
